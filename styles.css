@@ -23,7 +23,6 @@
     background: url(images/sofa.png) no-repeat center center;
     background-size: cover;
     background-attachment: scroll; /* Prevents mobile fixed issue */
-    height: 200px; /* Fixed rectangular height */
   }
 
   /* Container for text under the image */
@@ -32,10 +31,8 @@
     background: white;
     color: black;
   }
-  .hero-left p,
-  .here-right{
+  .hero-left p{
     display: none;
-    justify-content: ;
   }
   .hero{
     top: 10px;
@@ -212,6 +209,14 @@ button:hover {
 .bottom-btn{
   bottom: 5%;
   right: 30%;
+}
+@media(max-width: 768px){
+  .top-btn{
+    top:30%;
+  }
+  .bottom-btn{
+    bottom: 20%;
+  }
 }
 
 .button-line-dot {

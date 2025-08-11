@@ -11,7 +11,7 @@
   font-family: Arial, sans-serif;
   height: 100vh;
   color: white;
-  background: url(images/sofa.jfif) no-repeat center center;
+  background: url(images/sofa.png) no-repeat center center;
   background-size: cover;
   background-attachment: fixed; /* Optional for a parallax feel */
   background-position: center;
@@ -20,9 +20,28 @@
 /* For smaller devices, adjust height */
 @media (max-width: 768px) {
   body {
-    background-attachment: scroll; /* Avoid fixed issues on mobile */
+    background: url(images/sofa.png) no-repeat center center;
+    background-size: cover;
+    background-attachment: scroll; /* Prevents mobile fixed issue */
+    height: 200px; /* Fixed rectangular height */
+  }
+
+  /* Container for text under the image */
+  .content {
+    padding: 20px;
+    background: white;
+    color: black;
+  }
+  .hero-left p,
+  .here-right{
+    display: none;
+    justify-content: ;
+  }
+  .hero{
+    top: 10px;
   }
 }
+
 
     nav {
       display: flex;
@@ -109,7 +128,7 @@
     }
 
     .hero-left p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       max-width: 600px;
       font-family: poppins;
     }
@@ -168,24 +187,109 @@ button:hover {
 .middle-btn,
 .bottom-btn{
   position: absolute;
-  padding: 5px;
+  padding: 10px;
   border-radius: 20px;
-  border: none;
-  background-color: rgba(255, 255, 255, 0.4);
   z-index: 999;
   color: #fff;
   font-family: poppins;
   min-width: 100px;
 }
+.mid-btn{
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid #fafbfb;
+}
+
+
 .top-btn{
-  top: 100px;
+  top: 20%;
+  right: 40%;
 }
 .middle-btn{
   top: 50%;
   right: 20%;
+
 }
 .bottom-btn{
-  bottom: 20px;
+  bottom: 5%;
   right: 30%;
 }
+
+.button-line-dot {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .button-line-dot button {
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .button-line-dot button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    }
+
+    .line-dot {
+      display: flex;
+      align-items: center;
+      margin-left: -1px; /* attaches line to button */
+      position: relative;
+    }
+
+    .line {
+      width: 40px;
+      height: 2px;
+      background: #fafbfb;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      background: #fdfdfd;
+      border-radius: 50%;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Pulse bubble effect */
+    .dot::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 10px;
+      height: 10px;
+      background: #fefefe;
+      border-radius: 50%;
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0.6;
+      animation: pulse 1.5s infinite ease-out;
+      z-index: -1;
+    }
+    .sofa-line-dot{
+      
+      display: flex;
+      flex-direction: column;
+    } 
+    .sofa-line-dot .line-dot{
+      rotate: -90deg;
+      position: absolute;
+      top: -20px;
+    }
+    
+
+    @keyframes pulse {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.6;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(2.5);
+        opacity: 0;
+      }
+    }
 

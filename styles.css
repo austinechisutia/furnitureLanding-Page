@@ -7,11 +7,21 @@
       font-family: yeseva one;
     }
 
-    body {
+   body {
   font-family: Arial, sans-serif;
   height: 100vh;
   color: white;
-  background: url(images/sofa.jfif) no-repeat center center/cover;
+  background: url(images/sofa.jfif) no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed; /* Optional for a parallax feel */
+  background-position: center;
+}
+
+/* For smaller devices, adjust height */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll; /* Avoid fixed issues on mobile */
+  }
 }
 
     nav {
